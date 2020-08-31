@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import { Container, Input } from "./styles";
+import { Container, Input } from './styles';
 
 const CustomInput = () => {
-  <Container>
-    <Input />
-  </Container>;
+  return (
+    <Container>
+      <Input />
+    </Container>
+  );
 };
 
 export default CustomInput;
