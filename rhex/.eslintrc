@@ -8,10 +8,12 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "no-unused-vars": ["error", { "vars": "all" }],
+    "no-var": 2,
+    "prefer-const": [1, { "destructuring": "all" }],
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "no-unused-vars": [2, { "vars": "all" }],
     "import-helpers/order-imports": [
-      "warn",
+      1,
       {
         "groups": ["module", "/^react/", ["parent", "sibling", "index"]],
         "alphabetize": { "order": "asc", "ignoreCase": true }
