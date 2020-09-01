@@ -3,7 +3,6 @@ import React from 'react';
 import { CustomInput } from './components';
 
 function App() {
-  let a = 5;
   return (
     <div className="App">
       hello world
