@@ -5,7 +5,6 @@ import { Container, Input } from './styles';
 const CustomInput = ({
   value,
   onChange,
-  blah,
 }: {
   value: string;
   onChange?: (event: React.ChangeEvent<{}>) => void;
