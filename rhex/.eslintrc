@@ -8,10 +8,9 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    "no-var": 2,
     "prefer-const": [1, { "destructuring": "all" }],
     "@typescript-eslint/explicit-function-return-type": 0,
-    "no-unused-vars": [2, { "vars": "all" }],
+    "no-unused-vars": [1, { "vars": "all" }],
     "import-helpers/order-imports": [
       1,
       {
