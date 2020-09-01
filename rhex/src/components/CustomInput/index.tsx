@@ -2,11 +2,10 @@ import React from 'react';
 
 import { Container, Input } from './styles';
 
-let a = 5;
-
 const CustomInput = ({
   value,
   onChange,
+  blah,
 }: {
   value: string;
   onChange?: (event: React.ChangeEvent<{}>) => void;
