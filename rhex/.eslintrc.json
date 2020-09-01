@@ -12,11 +12,12 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    "prefer-const": [1, { "destructuring": "all" }],
-    "@typescript-eslint/explicit-function-return-type": 0,
-    "no-unused-vars": [2, { "vars": "all" }],
+    "no-console": "warn",
+    "prefer-const": ["error", { "destructuring": "all" }],
+    "@typescript-eslint/explicit-function-return-type": "none",
+    "no-unused-vars": ["error", { "vars": "all" }],
     "import-helpers/order-imports": [
-      1,
+      "warn",
       {
         "groups": ["module", "/^react/", ["parent", "sibling", "index"]],
         "alphabetize": { "order": "asc", "ignoreCase": true }
