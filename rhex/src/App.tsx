@@ -37,8 +37,25 @@ const App = () => {
     setValues(allQA);
   };
 
+  function download() {
+    var element = document.createElement('a');
+    element.setAttribute(
+      'href',
+      'data:text/plain;charset=utf-8,' + encodeURIComponent('texto'),
+    );
+    element.setAttribute('download', 'README.md');
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+  }
+
   return (
     <div>
+      <button onClick={() => download()}>clique-me</button>
       <br />
       {values.map((value, index) => {
         console.log(value);
