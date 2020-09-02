@@ -37,7 +37,7 @@ const App = () => {
     setValues(allQA);
   };
 
-  function download() {
+  const download = () => {
     var element = document.createElement('a');
     element.setAttribute(
       'href',
