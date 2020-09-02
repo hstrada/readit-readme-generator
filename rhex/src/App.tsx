@@ -29,12 +29,12 @@ const App = () => {
   const [values, setValues] = useState(questions);
 
   const handleQA = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
-    const insertQA = [...values];
+    const allQA = [...values];
 
-    const selectedQuestion = insertQA[index];
-    selectedQuestion.answer = e.target.value;
+    const selectedQA = allQA[index];
+    selectedQA.answer = e.target.value;
 
-    setValues(insertQA);
+    setValues(allQA);
   };
 
   return (
