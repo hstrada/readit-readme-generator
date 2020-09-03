@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 
 const TextInput = ({
   value,
@@ -27,6 +27,8 @@ const App = () => {
   ];
 
   const [values, setValues] = useState(questions);
+  const [todoItem, setTodoItem] = useState('');
+  const [todoList, setTodoList] = useState<Array<string>>([]);
 
   const handleQA = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const allQA = [...values];
@@ -51,12 +53,19 @@ const App = () => {
     element.click();
 
     document.body.removeChild(element);
-  }
+  };
+
+  const handleTodoList = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setTodoList([...todoList.concat(todoItem)]);
+    setTodoItem('');
+  };
 
   return (
     <div>
       <button onClick={() => download()}>clique-me</button>
       <br />
+      Perguntas
       {values.map((value, index) => {
         console.log(value);
         return (
@@ -70,6 +79,21 @@ const App = () => {
           </label>
         );
       })}
+      <br />
+      ToDo List
+      <br />
+      <form onSubmit={handleTodoList}>
+        <input
+          type="text"
+          value={todoItem}
+          onChange={e => setTodoItem(e.target.value)}
+        />
+        <input type="submit" value="Add" />
+      </form>
+      <br />
+      {todoList.map((element, index) => (
+        <li key={index}>{element}</li>
+      ))}
     </div>
   );
 };
