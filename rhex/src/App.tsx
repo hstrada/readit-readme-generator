@@ -26,17 +26,22 @@ const App = () => {
     },
   ];
 
-  const [values, setValues] = useState(questions);
+  const todoList: Array<string> = [];
+
+  const [values, setValues] = useState({
+    questions: questions,
+    todoList: todoList,
+  });
+
   const [todoItem, setTodoItem] = useState('');
-  const [todoList, setTodoList] = useState<Array<string>>([]);
 
   const handleQA = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
-    const allQA = [...values];
+    const allQA = [...values.questions];
 
     const selectedQA = allQA[index];
     selectedQA.answer = e.target.value;
 
-    setValues(allQA);
+    setValues({ ...values, questions: allQA });
   };
 
   const download = () => {
@@ -57,7 +62,7 @@ const App = () => {
 
   const handleTodoList = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setTodoList([...todoList.concat(todoItem)]);
+    setValues({ ...values, todoList: [...values.todoList.concat(todoItem)] });
     setTodoItem('');
   };
 
@@ -66,7 +71,8 @@ const App = () => {
       <button onClick={() => download()}>clique-me</button>
       <br />
       Perguntas
-      {values.map((value, index) => {
+      <br />
+      {values.questions.map((value, index) => {
         console.log(value);
         return (
           <label>
@@ -91,7 +97,7 @@ const App = () => {
         <input type="submit" value="Add" />
       </form>
       <br />
-      {todoList.map((element, index) => (
+      {values.todoList.map((element, index) => (
         <li key={index}>{element}</li>
       ))}
     </div>
