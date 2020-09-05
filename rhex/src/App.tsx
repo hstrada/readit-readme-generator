@@ -17,11 +17,11 @@ const TextInput = ({
 const App = () => {
   const questions = [
     {
-      question: 'Pergunta A',
+      question: 'Project Name',
       answer: '',
     },
     {
-      question: 'Pergunta B',
+      question: 'Project Description',
       answer: '',
     },
   ];
@@ -44,11 +44,29 @@ const App = () => {
     setValues({ ...values, questions: allQA });
   };
 
+  const createReadme = () => {
+    const readme = `# ${values.questions[0].question} 
+${values.questions[0].answer}
+
+---
+
+# ${values.questions[1].question}
+${values.questions[1].answer}
+
+---
+      
+# Future Improvements
+
+${values.todoList.map(element => `- [ ] ` + element).join('\n')}`;
+
+    return readme;
+  };
+
   const download = () => {
     var element = document.createElement('a');
     element.setAttribute(
       'href',
-      'data:text/plain;charset=utf-8,' + encodeURIComponent('texto'),
+      'data:text/plain;charset=utf-8,' + encodeURIComponent(createReadme()),
     );
     element.setAttribute('download', 'README.md');
 
