@@ -48,13 +48,9 @@ const App = () => {
     const readme = `# ${values.questions[0].question} 
 ${values.questions[0].answer}
 
----
-
 # ${values.questions[1].question}
 ${values.questions[1].answer}
 
----
-      
 # Future Improvements
 
 ${values.todoList.map(element => `- [ ] ` + element).join('\n')}`;
