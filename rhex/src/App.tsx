@@ -1,5 +1,7 @@
 import React, { useState, FormEvent } from 'react';
 
+import { generate } from './utils';
+
 const TextInput = ({
   value,
   onChange,
@@ -44,25 +46,12 @@ const App = () => {
     setValues({ ...values, questions: allQA });
   };
 
-  const createReadme = () => {
-    const readme = `# ${values.questions[0].question} 
-${values.questions[0].answer}
-
-# ${values.questions[1].question}
-${values.questions[1].answer}
-
-# Future Improvements
-
-${values.todoList.map(element => `- [ ] ` + element).join('\n')}`;
-
-    return readme;
-  };
-
   const download = () => {
     var element = document.createElement('a');
     element.setAttribute(
       'href',
-      'data:text/plain;charset=utf-8,' + encodeURIComponent(createReadme()),
+      'data:text/plain;charset=utf-8,' +
+        encodeURIComponent(generate.readme({qa: values.questions, futureImprovements: values.todoList})),
     );
     element.setAttribute('download', 'README.md');
 
