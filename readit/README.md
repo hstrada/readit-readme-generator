@@ -1,8 +1,8 @@
 # Project Name 
-rhex
+read.it
 
 # Project Description
-rhex readme generator
+read.it readme generator
 
 # Future Improvements
 
