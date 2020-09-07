@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Flat = () => <button>Flat</button>;
+import { Container } from './styles';
+
+const Flat = () => <Container>Flat</Container>;
 
 export default Flat;
