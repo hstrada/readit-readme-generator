@@ -2,6 +2,8 @@ import React, { useState, FormEvent } from 'react';
 
 import { generate } from './utils';
 
+import { Button } from './components';
+
 const TextInput = ({
   value,
   onChange,
@@ -51,7 +53,12 @@ const App = () => {
     element.setAttribute(
       'href',
       'data:text/plain;charset=utf-8,' +
-        encodeURIComponent(generate.readme({qa: values.questions, futureImprovements: values.todoList})),
+        encodeURIComponent(
+          generate.readme({
+            qa: values.questions,
+            futureImprovements: values.todoList,
+          }),
+        ),
     );
     element.setAttribute('download', 'README.md');
 
@@ -72,6 +79,7 @@ const App = () => {
   return (
     <div>
       <button onClick={() => download()}>clique-me</button>
+      <Button.Flat />
       <br />
       Perguntas
       <br />
