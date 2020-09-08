@@ -82,7 +82,8 @@ const App = () => {
     <>
       <div>
         <button onClick={() => download()}>clique-me</button>
-        <Button.Flat />
+        <Button.Flat variant="primary" />
+        <Button.Flat variant="secondary" />
         <br />
         Perguntas
         <br />
