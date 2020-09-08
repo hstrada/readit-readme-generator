@@ -1,11 +1,16 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, ContainerB } from './styles';
 
 import { IButtonVariants } from './interface';
 
 const Flat = ({ variant }: IButtonVariants) => {
-  return <Container variant={variant}>Flat</Container>;
+  return (
+    <>
+      <Container>Generate</Container>
+      <ContainerB>Contact Us</ContainerB>
+    </>
+  );
 };
 
 export default Flat;

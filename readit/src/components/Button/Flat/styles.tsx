@@ -22,19 +22,31 @@ const ButtonVariants: Variants = {
   },
 };
 
-export const Container = styled.button<IButtonVariants>`
-  background-color: ${({ variant }) => ButtonVariants[variant].backgroundColor};
-  border: none;
-  color: ${({ theme }) => theme.colors.tertiary};
+export const DefaultContainer = styled.button`
+  padding: 12px 24px;
+  margin: 12px 24px;
+  font: 20px Poppins;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  width: ${({ variant }) => ButtonVariants[variant].width};
-  height: ${({ theme }) => theme.units.button.height};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-size: 14px;
+  border: 0;
+`;
 
+// small - 8px 12px
+// font-size: 14px
+
+export const Container = styled(DefaultContainer)`
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.tertiary};
   &:hover {
     background-color: #085ddd;
+  }
+`;
+
+export const ContainerB = styled(DefaultContainer)`
+  background-color: transparent;
+  border: 2px solid #000;
+  color: #000;
+  &:hover {
+    background-color: red;
   }
 `;
