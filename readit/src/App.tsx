@@ -80,10 +80,10 @@ const App = () => {
 
   return (
     <>
+      <Button.Flat variant="primary" />
+      <Button.Flat variant="secondary" />
       <div>
         <button onClick={() => download()}>clique-me</button>
-        <Button.Flat variant="primary" />
-        <Button.Flat variant="secondary" />
         <br />
         Perguntas
         <br />

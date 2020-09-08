@@ -29,6 +29,11 @@ export const DefaultContainer = styled.button`
   text-align: center;
   text-decoration: none;
   border: 0;
+  width: 100%;
+
+  @media (min-width: 720px) {
+    width: initial;
+  }
 `;
 
 // small - 8px 12px
