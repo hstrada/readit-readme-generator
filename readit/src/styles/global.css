@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Poppins';
+  font-style: bold;
+  font-weight: 400;
+  src: local('Poppins'), local('Poppins'),
+    /* Modern Browsers */ url('../assets/fonts/Poppins-Bold.ttf')
+      format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins-SemiBold';
+  font-style: bold;
+  font-weight: 400;
+  src: local('Poppins-SemiBold'), local('Poppins-SemiBold'),
+    /* Modern Browsers */ url('../assets/fonts/Poppins-SemiBold.ttf')
+      format('truetype');
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  font-style: bold;
+  font-weight: 400;
+  src: local('FiraSans'), local('FiraSans'),
+    /* Modern Browsers */ url('../assets/fonts/FiraSans-Regular.ttf')
+      format('truetype');
+}
+
+body {
+  font-family: 'Poppins-SemiBold';
+}

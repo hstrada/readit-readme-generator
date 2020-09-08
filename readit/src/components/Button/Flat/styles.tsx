@@ -9,6 +9,8 @@ export const Container = styled.button`
   display: inline-block;
   width: ${({ theme }) => theme.units.button.width};
   height: ${({ theme }) => theme.units.button.height};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-size: 14px;
 
   &:hover {
     background-color: #085ddd;

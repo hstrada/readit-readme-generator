@@ -4,11 +4,14 @@ import colors from './colors';
 
 import units from './units';
 
-// and extend them!
+import fonts from './fonts';
+
 declare module 'styled-components' {
   export interface DefaultTheme {
     units: typeof units;
 
     colors: typeof colors;
+
+    fonts: typeof fonts;
   }
 }

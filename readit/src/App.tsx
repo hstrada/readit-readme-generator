@@ -1,8 +1,10 @@
 import React, { useState, FormEvent } from 'react';
 
+import './styles/global.css';
+
 import { generate } from './utils';
 
-import { Button } from './components';
+import { Button, Row, Col } from './components';
 
 const TextInput = ({
   value,
@@ -49,7 +51,7 @@ const App = () => {
   };
 
   const download = () => {
-    var element = document.createElement('a');
+    const element = document.createElement('a');
     element.setAttribute(
       'href',
       'data:text/plain;charset=utf-8,' +
@@ -77,41 +79,48 @@ const App = () => {
   };
 
   return (
-    <div>
-      <button onClick={() => download()}>clique-me</button>
-      <Button.Flat />
-      <br />
-      Perguntas
-      <br />
-      {values.questions.map((value, index) => {
-        console.log(value);
-        return (
-          <label>
-            {value.question}
-            <TextInput
-              key={index}
-              value={value.answer}
-              onChange={e => handleQA(e, index)}
-            />
-          </label>
-        );
-      })}
-      <br />
-      ToDo List
-      <br />
-      <form onSubmit={handleTodoList}>
-        <input
-          type="text"
-          value={todoItem}
-          onChange={e => setTodoItem(e.target.value)}
-        />
-        <input type="submit" value="Add" />
-      </form>
-      <br />
-      {values.todoList.map((element, index) => (
-        <li key={index}>{element}</li>
-      ))}
-    </div>
+    <>
+      <div>
+        <button onClick={() => download()}>clique-me</button>
+        <Button.Flat />
+        <br />
+        Perguntas
+        <br />
+        {values.questions.map((value, index) => {
+          console.log(value);
+          return (
+            <label>
+              {value.question}
+              <TextInput
+                key={index}
+                value={value.answer}
+                onChange={e => handleQA(e, index)}
+              />
+            </label>
+          );
+        })}
+        <br />
+        ToDo List
+        <br />
+        <form onSubmit={handleTodoList}>
+          <input
+            type="text"
+            value={todoItem}
+            onChange={e => setTodoItem(e.target.value)}
+          />
+          <input type="submit" value="Add" />
+        </form>
+        <br />
+        {values.todoList.map((element, index) => (
+          <li key={index}>{element}</li>
+        ))}
+        <Row>
+          <Col>This is a long text to test</Col>
+          <Col>This is a long text to test</Col>
+          <Col>This is a long text to test</Col>
+        </Row>
+      </div>
+    </>
   );
 };
 
