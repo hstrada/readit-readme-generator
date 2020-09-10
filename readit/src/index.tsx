@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Home from './pages/Home';
 import * as serviceWorker from './serviceWorker';
 import { ThemeProvider } from 'styled-components';
 import { readitTheme } from './theme';
@@ -8,7 +9,7 @@ import { readitTheme } from './theme';
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={readitTheme}>
-      <App />
+      <Home />
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root'),
