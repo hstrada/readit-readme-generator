@@ -1,33 +1,48 @@
 import React from 'react';
 
 import './index.css';
+import '../../styles/global.css';
 
-const Home = () => {
+import {
+  Main,
+  Title,
+  Container,
+  Content,
+  Image,
+  ContentButton,
+  ContentText,
+} from './styles';
+
+import { Button } from '../../components';
+
+const Home: React.FC = () => {
   return (
-    <main>
-      <div className="landing-container">
-        <div className="landing-content">
-          <div className="landing-text">
-            <h1>
+    <Main>
+      <Container>
+        <Content>
+          <ContentText>
+            <Title>
               Make github project readme easy and fast<span>.</span>
-            </h1>
+            </Title>
 
             <p>
               A generator that help you to make beautiful and complete readme.
               Let’s take a look?
             </p>
-          </div>
-          <div className="landing-buttons">
-            <button className="def">Generate</button>
-            <button className="out">Support Us</button>
-          </div>
-        </div>
+          </ContentText>
+          <ContentButton>
+            <Button.Flat />
+            <Button.Outline />
+            {/* <button className="def">Generate</button>
+            <button className="out">Support Us</button> */}
+          </ContentButton>
+        </Content>
 
-        <div className="landing-image">
+        <Image>
           <p>aqui vai a imagem</p>
-        </div>
-      </div>
-    </main>
+        </Image>
+      </Container>
+    </Main>
   );
 };
 

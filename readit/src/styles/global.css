@@ -34,4 +34,6 @@
 
 body {
   font-family: 'Poppins-SemiBold';
+  background: #fff;
+  height: 100vh;
 }

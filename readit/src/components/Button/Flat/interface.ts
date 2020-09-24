@@ -1,5 +1,5 @@
 export interface IButtonVariants {
-  variant: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary';
 }
 
 interface Props {
