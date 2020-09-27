@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { DefaultContainer } from '../Default/styles';
 
 export const Container = styled(DefaultContainer)`
-  background-color: transparent;
-  border: 2px solid #000;
-  color: #000;
+  background-color: ${({ theme }) => theme.colors.transparent};
+  border: 2px solid #202020;
+  color: ${({ theme }) => theme.colors.secondary};
   &:hover {
-    background-color: red;
+    background-color: #f6f6f6;
   }
 `;

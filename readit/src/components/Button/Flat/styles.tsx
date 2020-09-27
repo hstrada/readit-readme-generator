@@ -2,10 +2,12 @@ import styled from 'styled-components';
 
 import { DefaultContainer } from '../Default/styles';
 
-export const Container = styled(DefaultContainer)`
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.tertiary};
+import { StyledProps } from './interface';
+
+export const Container = styled(DefaultContainer)<StyledProps>`
   &:hover {
     background-color: #085ddd;
   }
+
+  ${({ small }) => small && { 'font-size': '14px', padding: '8px 12px' }}
 `;
