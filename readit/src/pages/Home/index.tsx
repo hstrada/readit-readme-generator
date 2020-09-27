@@ -1,8 +1,5 @@
 import React from 'react';
 
-import './index.css';
-import '../../styles/global.css';
-
 import {
   Main,
   Title,
@@ -31,10 +28,8 @@ const Home: React.FC = () => {
             </p>
           </ContentText>
           <ContentButton>
-            <Button.Flat />
+            <Button.Flat label="Generate" />
             <Button.Outline />
-            {/* <button className="def">Generate</button>
-            <button className="out">Support Us</button> */}
           </ContentButton>
         </Content>
 

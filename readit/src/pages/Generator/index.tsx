@@ -1,7 +1,5 @@
 import React, { useState, FormEvent } from 'react';
 
-import '../../styles/global.css';
-
 import { generate } from '../../utils';
 
 import { Button, Row, Col } from '../../components';

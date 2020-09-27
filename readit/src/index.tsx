@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
 import { ThemeProvider } from 'styled-components';
 import { readitTheme } from './theme';
+import GlobalStyle from './theme/globalStyles';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={readitTheme}>
+      <GlobalStyle />
       <App />
     </ThemeProvider>
   </React.StrictMode>,
