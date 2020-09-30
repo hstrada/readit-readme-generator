@@ -4,4 +4,5 @@ export default {
   tertiary: '#FFFFFF',
   fourth: '#31373D',
   transparent: 'transparent',
+  neutral: '#ECECEC',
 };

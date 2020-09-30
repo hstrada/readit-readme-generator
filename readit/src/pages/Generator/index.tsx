@@ -2,7 +2,9 @@ import React, { useState, FormEvent } from 'react';
 
 import { generate } from '../../utils';
 
-import { Button, Row, Col } from '../../components';
+import { Input, NavBar } from '../../components';
+
+import { Main, Container } from './styles';
 
 const TextInput = ({
   value,
@@ -78,39 +80,51 @@ const Generator = () => {
 
   return (
     <div>
-      Perguntas
+      <NavBar />
       <br />
-      {values.questions.map((value, index) => {
-        console.log(value);
-        return (
-          <label>
-            {value.question}
-            <TextInput
-              key={index}
-              value={value.answer}
-              onChange={e => handleQA(e, index)}
+      <br />
+      <br />
+      <br />
+      <Main>
+        <Container>
+          <Input />
+          <br />
+          <br />
+          <br />
+          <br />
+          {values.questions.map((value, index) => {
+            console.log(value);
+            return (
+              <label>
+                {value.question}
+                <TextInput
+                  key={index}
+                  value={value.answer}
+                  onChange={e => handleQA(e, index)}
+                />
+              </label>
+            );
+          })}
+          <br />
+          ToDo List
+          <br />
+          <form onSubmit={handleTodoList}>
+            <input
+              type="text"
+              value={todoItem}
+              onChange={e => setTodoItem(e.target.value)}
             />
-          </label>
-        );
-      })}
-      <br />
-      ToDo List
-      <br />
-      <form onSubmit={handleTodoList}>
-        <input
-          type="text"
-          value={todoItem}
-          onChange={e => setTodoItem(e.target.value)}
-        />
-        <input type="submit" value="Add" />
-      </form>
-      <br />
-      {values.todoList.map((element, index) => (
-        <li key={index}>{element}</li>
-      ))}
-      <br />
-      <button onClick={() => download()}>Download Readme</button>
-      <br />
+            <input type="submit" value="Add" />
+          </form>
+          <br />
+          {values.todoList.map((element, index) => (
+            <li key={index}>{element}</li>
+          ))}
+          <br />
+          <button onClick={() => download()}>Download Readme</button>
+          <br />
+        </Container>
+      </Main>
     </div>
   );
 };

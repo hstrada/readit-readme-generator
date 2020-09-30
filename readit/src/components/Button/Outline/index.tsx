@@ -2,9 +2,7 @@ import React from 'react';
 
 import { Container } from './styles';
 
-interface Props {
-  linkTo: string;
-}
+import { Props } from './interface';
 
 const Outline: React.FC<Props> = ({ linkTo, ...rest }: Props) => {
   return (

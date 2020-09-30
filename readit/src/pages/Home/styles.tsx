@@ -66,7 +66,7 @@ export const Title = styled.h1`
   line-height: 57px;
   margin-bottom: 24px;
   & > span {
-    color: #1771f7;
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;
 

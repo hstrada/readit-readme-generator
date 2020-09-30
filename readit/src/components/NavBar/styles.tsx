@@ -34,6 +34,9 @@ export const Nav = styled.nav`
 
     li {
       display: inline;
+      & > span {
+        color: ${({ theme }) => theme.colors.primary};
+      }
     }
 
     :last-child {

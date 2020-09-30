@@ -8,7 +8,9 @@ const NavBar: React.FC = () => {
     <Container>
       <Nav>
         <ul>
-          <li>read.it</li>
+          <li>
+            read<span>.</span>it
+          </li>
         </ul>
         <ul>
           <li>
