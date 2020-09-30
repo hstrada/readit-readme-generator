@@ -50,7 +50,7 @@ export const ContentButton = styled.div`
     flex-direction: row;
   }
 
-  button + button {
+  a + a {
     margin-top: 20px;
     @media (min-width: 720px) {
       margin-top: 0;

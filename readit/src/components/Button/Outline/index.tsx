@@ -2,8 +2,16 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const Outline: React.FC = () => {
-  return <Container>Support us</Container>;
+interface Props {
+  linkTo: string;
+}
+
+const Outline: React.FC<Props> = ({ linkTo, ...rest }: Props) => {
+  return (
+    <Container to={linkTo} {...rest}>
+      Support us
+    </Container>
+  );
 };
 
 export default Outline;

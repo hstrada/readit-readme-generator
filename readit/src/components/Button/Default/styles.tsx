@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const DefaultContainer = styled.button`
+export const DefaultContainer = styled(Link)`
   padding: 12px 24px;
   font: 600 20px Poppins;
   text-align: center;

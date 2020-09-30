@@ -28,13 +28,14 @@ const Home: React.FC = () => {
             </p>
           </ContentText>
           <ContentButton>
-            <Button.Flat label="Generate" />
-            <Button.Outline />
+            <Button.Flat label="Generate" linkTo="generator" />
+
+            <Button.Outline linkTo="teste" />
           </ContentButton>
         </Content>
 
         <Image>
-          <p>aqui vai a imagem</p>
+          <img src={require('../../assets/imgs/readme-light.png')} />
         </Image>
       </Container>
     </Main>

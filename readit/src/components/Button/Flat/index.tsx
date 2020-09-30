@@ -3,8 +3,17 @@ import { Props } from './interface';
 
 import { Container } from './styles';
 
-const Flat: React.FC<Props> = ({ label, small = false }: Props) => {
-  return <Container small={small}>{label}</Container>;
+const Flat: React.FC<Props> = ({
+  label,
+  small = false,
+  linkTo,
+  ...rest
+}: Props) => {
+  return (
+    <Container to={linkTo} small={small} {...rest}>
+      {label}
+    </Container>
+  );
 };
 
 export default Flat;
