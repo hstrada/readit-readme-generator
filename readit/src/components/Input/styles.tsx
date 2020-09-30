@@ -9,4 +9,10 @@ export const Container = styled.input`
   font-family: ${({ theme }) => theme.fonts.secondary};
   font-size: 20px;
   padding-left: 12px;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 24px;
+
+  ::placeholder {
+    color: ${({ theme }) => theme.colors.tertiary};
+  }
 `;

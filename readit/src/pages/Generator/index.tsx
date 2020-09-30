@@ -6,20 +6,6 @@ import { Input, NavBar } from '../../components';
 
 import { Main, Container } from './styles';
 
-const TextInput = ({
-  value,
-  onChange,
-  key,
-}: {
-  value: string;
-  key: string | number;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}) => (
-  <div>
-    <input type="text" key={key} value={value} onChange={onChange} />
-  </div>
-);
-
 const Generator = () => {
   const questions = [
     {
@@ -87,7 +73,6 @@ const Generator = () => {
       <br />
       <Main>
         <Container>
-          <Input />
           <br />
           <br />
           <br />
@@ -95,14 +80,12 @@ const Generator = () => {
           {values.questions.map((value, index) => {
             console.log(value);
             return (
-              <label>
-                {value.question}
-                <TextInput
-                  key={index}
-                  value={value.answer}
-                  onChange={e => handleQA(e, index)}
-                />
-              </label>
+              <Input
+                key={index}
+                value={value.answer}
+                placeholder={value.question}
+                onChange={e => handleQA(e, index)}
+              />
             );
           })}
           <br />
