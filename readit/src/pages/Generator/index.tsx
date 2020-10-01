@@ -7,7 +7,7 @@ import { Input, NavBar, Button, ToDo } from '../../components';
 import { Main, Container, ContainerButton, ContainerForm } from './styles';
 import { IItem } from '../../components/ToDo/Item/interface';
 
-const Generator = () => {
+const Generator: React.FC = () => {
   const questions = [
     {
       question: 'Project Name',

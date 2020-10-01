@@ -16,7 +16,7 @@ ${qa[1].answer}
 # Future Improvements
 
 ${futureImprovements
-  .map(element => `- [${element.isCompleted ? 'x' : ' '}] ` + element.text)
+  .map(todo => `- [${todo.isCompleted ? 'x' : ' '}] ` + todo.text)
   .join('\n')}`;
 
   return readme;
