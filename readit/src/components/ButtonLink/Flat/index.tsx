@@ -6,11 +6,11 @@ import { Container } from './styles';
 const Flat: React.FC<Props> = ({
   label,
   small = false,
-  onClick,
+  linkTo,
   ...rest
 }: Props) => {
   return (
-    <Container onClick={onClick} small={small} {...rest}>
+    <Container to={linkTo} small={small} {...rest}>
       {label}
     </Container>
   );

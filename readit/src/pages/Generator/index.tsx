@@ -2,9 +2,16 @@ import React, { useState, FormEvent } from 'react';
 
 import { generate } from '../../utils';
 
-import { Input, NavBar } from '../../components';
+import { Input, NavBar, Button, ToDo } from '../../components';
 
-import { Main, Container } from './styles';
+import {
+  Main,
+  Container,
+  Form,
+  ContainerButton,
+  List,
+  InputList,
+} from './styles';
 
 const Generator = () => {
   const questions = [
@@ -18,14 +25,14 @@ const Generator = () => {
     },
   ];
 
-  const todoList: Array<string> = [];
+  const todoList: Array<{ text: string; isCompleted: boolean }> = [];
 
   const [values, setValues] = useState({
     questions: questions,
     todoList: todoList,
   });
 
-  const [todoItem, setTodoItem] = useState('');
+  const [todoItem, setTodoItem] = useState({ text: '', isCompleted: false });
 
   const handleQA = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const allQA = [...values.questions];
@@ -36,49 +43,32 @@ const Generator = () => {
     setValues({ ...values, questions: allQA });
   };
 
-  const download = () => {
-    const element = document.createElement('a');
-    element.setAttribute(
-      'href',
-      'data:text/plain;charset=utf-8,' +
-        encodeURIComponent(
-          generate.readme({
-            qa: values.questions,
-            futureImprovements: values.todoList,
-          }),
-        ),
-    );
-    element.setAttribute('download', 'README.md');
+  const [todos, setTodos] = React.useState<any>([]);
 
-    element.style.display = 'none';
-    document.body.appendChild(element);
-
-    element.click();
-
-    document.body.removeChild(element);
+  const addTodo = (text: any) => {
+    const newTodos = [...todos, { text }];
+    setTodos(newTodos);
   };
 
-  const handleTodoList = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setValues({ ...values, todoList: [...values.todoList.concat(todoItem)] });
-    setTodoItem('');
+  const completeTodo = (index: any) => {
+    const newTodos = [...todos];
+    newTodos[index].isCompleted = !newTodos[index].isCompleted;
+    setTodos(newTodos);
+  };
+
+  const removeTodo = (index: any) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
   };
 
   return (
     <div>
       <NavBar />
-      <br />
-      <br />
-      <br />
-      <br />
+
       <Main>
         <Container>
-          <br />
-          <br />
-          <br />
-          <br />
           {values.questions.map((value, index) => {
-            console.log(value);
             return (
               <Input
                 key={index}
@@ -88,28 +78,73 @@ const Generator = () => {
               />
             );
           })}
-          <br />
-          ToDo List
-          <br />
-          <form onSubmit={handleTodoList}>
-            <input
-              type="text"
-              value={todoItem}
+
+          {/* <Form onSubmit={handleTodoList}>
+            <Input
+              value={todoItem.text}
+              key="todoItem"
+              placeholder="item description"
               onChange={e => setTodoItem(e.target.value)}
             />
-            <input type="submit" value="Add" />
-          </form>
-          <br />
-          {values.todoList.map((element, index) => (
-            <li key={index}>{element}</li>
+            <Button.Flat label="Add" />
+          </Form> */}
+          <InputList>
+            <input type="checkbox" />
+            <span>exemplo</span>
+          </InputList>
+          {values.todoList.map((element, index) => {
+            return (
+              <InputList>
+                <input type="checkbox" />
+                <span>{element}</span>
+              </InputList>
+            );
+          })}
+
+          {todos.map((todo: any, index: any) => (
+            <ToDo.Item
+              key={index}
+              index={index}
+              todo={todo}
+              completeTodo={completeTodo}
+              removeTodo={removeTodo}
+            />
           ))}
-          <br />
-          <button onClick={() => download()}>Download Readme</button>
-          <br />
+          <ToDo.Form addTodo={addTodo} />
+
+          <ContainerButton>
+            <Button.Outline label="Clean" />
+            {/* <Button.Flat
+              onClick={() =>
+                generate.download({
+                  questions: values.questions,
+                  futureImprovements: values.todoList,
+                })
+              }
+              label="Download"
+            /> */}
+          </ContainerButton>
         </Container>
       </Main>
     </div>
   );
 };
+
+// return (
+//   <div className="app">
+//     <div className="todo-list">
+//       {todos.map((todo: any, index: any) => (
+//         <ToDo.Item
+//           key={index}
+//           index={index}
+//           todo={todo}
+//           completeTodo={completeTodo}
+//           removeTodo={removeTodo}
+//         />
+//       ))}
+//       <ToDo.Form addTodo={addTodo} />
+//     </div>
+//   </div>
+// );
 
 export default Generator;

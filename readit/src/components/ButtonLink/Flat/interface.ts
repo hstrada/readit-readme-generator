@@ -2,7 +2,7 @@ export interface Props {
   variant?: 'primary' | 'secondary';
   label: string;
   small?: boolean;
-  onClick?: () => void;
+  linkTo: string;
 }
 
 export interface StyledProps {

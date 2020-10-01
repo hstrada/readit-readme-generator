@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button';
+import ButtonLink from '../ButtonLink';
 
 import { Container, Nav } from './styles';
 
@@ -20,7 +20,7 @@ const NavBar: React.FC = () => {
             <img src={require('../../assets/imgs/github.png')} />
           </li>
           <li>
-            <Button.Flat
+            <ButtonLink.Flat
               variant="primary"
               label="Generate"
               linkTo="generator"

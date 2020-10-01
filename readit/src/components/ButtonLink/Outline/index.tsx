@@ -4,10 +4,10 @@ import { Container } from './styles';
 
 import { Props } from './interface';
 
-const Outline: React.FC<Props> = ({ onClick, label, ...rest }: Props) => {
+const Outline: React.FC<Props> = ({ linkTo, ...rest }: Props) => {
   return (
-    <Container onClick={onClick} {...rest}>
-      {label}
+    <Container to={linkTo} {...rest}>
+      Support us
     </Container>
   );
 };

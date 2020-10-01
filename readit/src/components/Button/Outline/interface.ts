@@ -1,3 +1,4 @@
 export interface Props {
-  linkTo: string;
+  onClick?: () => void;
+  label: string;
 }

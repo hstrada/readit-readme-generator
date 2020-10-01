@@ -18,6 +18,35 @@ ${futureImprovements.map(element => `- [ ] ` + element).join('\n')}`;
   return readme;
 };
 
+const download = ({
+  questions,
+  futureImprovements,
+}: {
+  questions: Array<{ question: string; answer: string }>;
+  futureImprovements: Array<string>;
+}) => {
+  const element = document.createElement('a');
+  element.setAttribute(
+    'href',
+    'data:text/plain;charset=utf-8,' +
+      encodeURIComponent(
+        readme({
+          qa: questions,
+          futureImprovements: futureImprovements,
+        }),
+      ),
+  );
+  element.setAttribute('download', 'README.md');
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+};
+
 export default {
   readme,
+  download,
 };

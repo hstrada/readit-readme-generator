@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  position: fixed;
   top: 0;
   display: flex;
   width: 100%;
   height: 60px;
   z-index: 5;
   padding: 12px 24px;
+  font-size: 32px;
+  font-family: ${({ theme }) => theme.fonts.primary};
   @media (min-width: 720px) {
     width: 1120px;
     left: 0;

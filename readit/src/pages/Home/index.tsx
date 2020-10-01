@@ -10,7 +10,7 @@ import {
   ContentText,
 } from './styles';
 
-import { Button, NavBar } from '../../components';
+import { ButtonLink, NavBar } from '../../components';
 
 const Home: React.FC = () => {
   return (
@@ -30,9 +30,9 @@ const Home: React.FC = () => {
               </p>
             </ContentText>
             <ContentButton>
-              <Button.Flat label="Generate" linkTo="generator" />
+              <ButtonLink.Flat label="Generate" linkTo="generator" />
 
-              <Button.Outline linkTo="teste" />
+              <ButtonLink.Outline linkTo="teste" />
             </ContentButton>
           </Content>
 
