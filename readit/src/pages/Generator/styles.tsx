@@ -29,6 +29,10 @@ export const Container = styled.div`
   }
 `;
 
+export const ContainerForm = styled.div`
+  margin-bottom: 24px;
+`;
+
 export const Form = styled.form`
   display: flex;
   flex-grow: 0;

@@ -1,17 +1,11 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState } from 'react';
 
 import { generate } from '../../utils';
 
 import { Input, NavBar, Button, ToDo } from '../../components';
 
-import {
-  Main,
-  Container,
-  Form,
-  ContainerButton,
-  List,
-  InputList,
-} from './styles';
+import { Main, Container, ContainerButton, ContainerForm } from './styles';
+import { IItem } from '../../components/ToDo/Item/interface';
 
 const Generator = () => {
   const questions = [
@@ -25,14 +19,12 @@ const Generator = () => {
     },
   ];
 
-  const todoList: Array<{ text: string; isCompleted: boolean }> = [];
+  const todoList: Array<IItem> = [];
 
   const [values, setValues] = useState({
     questions: questions,
     todoList: todoList,
   });
-
-  const [todoItem, setTodoItem] = useState({ text: '', isCompleted: false });
 
   const handleQA = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const allQA = [...values.questions];
@@ -43,23 +35,23 @@ const Generator = () => {
     setValues({ ...values, questions: allQA });
   };
 
-  const [todos, setTodos] = React.useState<any>([]);
-
   const addTodo = (text: any) => {
-    const newTodos = [...todos, { text }];
-    setTodos(newTodos);
+    const newTodos = [
+      ...values.todoList.concat({ text: text, isCompleted: false }),
+    ];
+    setValues({ ...values, todoList: newTodos });
   };
 
   const completeTodo = (index: any) => {
-    const newTodos = [...todos];
+    const newTodos = [...values.todoList];
     newTodos[index].isCompleted = !newTodos[index].isCompleted;
-    setTodos(newTodos);
+    setValues({ ...values, todoList: newTodos });
   };
 
   const removeTodo = (index: any) => {
-    const newTodos = [...todos];
+    const newTodos = [...values.todoList];
     newTodos.splice(index, 1);
-    setTodos(newTodos);
+    setValues({ ...values, todoList: newTodos });
   };
 
   return (
@@ -79,29 +71,11 @@ const Generator = () => {
             );
           })}
 
-          {/* <Form onSubmit={handleTodoList}>
-            <Input
-              value={todoItem.text}
-              key="todoItem"
-              placeholder="item description"
-              onChange={e => setTodoItem(e.target.value)}
-            />
-            <Button.Flat label="Add" />
-          </Form> */}
-          <InputList>
-            <input type="checkbox" />
-            <span>exemplo</span>
-          </InputList>
-          {values.todoList.map((element, index) => {
-            return (
-              <InputList>
-                <input type="checkbox" />
-                <span>{element}</span>
-              </InputList>
-            );
-          })}
+          <ContainerForm>
+            <ToDo.Form addTodo={addTodo} />
+          </ContainerForm>
 
-          {todos.map((todo: any, index: any) => (
+          {values.todoList.map((todo: IItem, index: number) => (
             <ToDo.Item
               key={index}
               index={index}
@@ -110,11 +84,10 @@ const Generator = () => {
               removeTodo={removeTodo}
             />
           ))}
-          <ToDo.Form addTodo={addTodo} />
 
           <ContainerButton>
             <Button.Outline label="Clean" />
-            {/* <Button.Flat
+            <Button.Flat
               onClick={() =>
                 generate.download({
                   questions: values.questions,
@@ -122,7 +95,7 @@ const Generator = () => {
                 })
               }
               label="Download"
-            /> */}
+            />
           </ContainerButton>
         </Container>
       </Main>

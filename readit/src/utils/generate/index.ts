@@ -1,10 +1,12 @@
+import { IItem } from '../../components/ToDo/Item/interface';
+
 const readme = ({
   qa,
   futureImprovements,
 }: {
   qa: Array<{ question: string; answer: string }>;
-  futureImprovements: Array<string>;
-}) => {
+  futureImprovements: Array<IItem>;
+}): string => {
   const readme = `# ${qa[0].question} 
 ${qa[0].answer}
 
@@ -23,8 +25,8 @@ const download = ({
   futureImprovements,
 }: {
   questions: Array<{ question: string; answer: string }>;
-  futureImprovements: Array<string>;
-}) => {
+  futureImprovements: Array<IItem>;
+}): void => {
   const element = document.createElement('a');
   element.setAttribute(
     'href',

@@ -1,17 +1,31 @@
 import React from 'react';
 
-const Item = ({ todo, index, completeTodo, removeTodo }: any) => {
+import { Container, ButtonAdd, ButtonDelete } from './styles';
+
+import { Props } from './interface';
+
+const Item: React.FC<Props> = ({
+  todo,
+  index,
+  completeTodo,
+  removeTodo,
+}: Props) => {
   return (
-    <div
-      className="todo"
-      style={{ textDecoration: todo.isCompleted ? 'line-through' : '' }}
-    >
+    <Container isCompleted={todo.isCompleted}>
       {todo.text}
       <div>
-        <button onClick={() => completeTodo(index)}>Complete</button>
-        <button onClick={() => removeTodo(index)}>x</button>
+        <ButtonAdd onClick={() => completeTodo(index)}>
+          {todo.isCompleted ? (
+            <img src={require('../../../assets/imgs/check.png')} />
+          ) : (
+            <img src={require('../../../assets/imgs/unchecked.png')} />
+          )}
+        </ButtonAdd>
+        <ButtonDelete onClick={() => removeTodo(index)}>
+          <img src={require('../../../assets/imgs/delete.png')} />
+        </ButtonDelete>
       </div>
-    </div>
+    </Container>
   );
 };
 
