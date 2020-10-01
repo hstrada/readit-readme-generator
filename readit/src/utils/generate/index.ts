@@ -15,7 +15,9 @@ ${qa[1].answer}
 
 # Future Improvements
 
-${futureImprovements.map(element => `- [ ] ` + element).join('\n')}`;
+${futureImprovements
+  .map(element => `- [${element.isCompleted ? 'x' : ' '}] ` + element.text)
+  .join('\n')}`;
 
   return readme;
 };
