@@ -16,6 +16,7 @@ const Home: React.FC = () => {
   return (
     <>
       <NavBar />
+
       <Main>
         <Container>
           <Content>

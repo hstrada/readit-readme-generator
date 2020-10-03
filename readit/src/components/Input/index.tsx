@@ -1,13 +1,8 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { FormGroup, FormInput, FormLabel } from './styles';
 
-interface Props {
-  value: string;
-  placeholder?: string;
-  key: string | number;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+import { Props } from './interface';
 
 const Input: React.FC<Props> = ({
   value,
@@ -15,14 +10,15 @@ const Input: React.FC<Props> = ({
   key,
   placeholder,
 }: Props) => {
+  const hasValue = value.length > 0;
+
   return (
-    <Container
-      type="text"
-      key={key}
-      value={value}
-      placeholder={placeholder}
-      onChange={onChange}
-    />
+    <FormGroup>
+      <FormInput type="text" key={key} value={value} onChange={onChange} />
+      <FormLabel hasValue={hasValue} htmlFor="first">
+        {placeholder}
+      </FormLabel>
+    </FormGroup>
   );
 };
 

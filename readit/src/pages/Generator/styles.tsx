@@ -20,18 +20,12 @@ export const Container = styled.div`
     margin: 0 auto;
   }
 
-  & > input {
-    margin-bottom: 24px;
-  }
-
   input + button {
     margin-left: 24px;
   }
 `;
 
-export const ContainerForm = styled.div`
-  margin-bottom: 24px;
-`;
+export const ContainerForm = styled.div``;
 
 export const Form = styled.form`
   display: flex;
@@ -44,7 +38,6 @@ export const ContainerButton = styled.div`
   display: flex;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 50%;
   margin-top: 24px;
   button:first-child {
     margin-right: 24px;

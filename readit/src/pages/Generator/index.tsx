@@ -5,6 +5,7 @@ import { generate } from '../../utils';
 import { Input, NavBar, Button, ToDo } from '../../components';
 
 import { Main, Container, ContainerButton, ContainerForm } from './styles';
+
 import { IItem } from '../../components/ToDo/Item/interface';
 
 const Generator: React.FC = () => {
@@ -35,20 +36,20 @@ const Generator: React.FC = () => {
     setValues({ ...values, questions: allQA });
   };
 
-  const addTodo = (text: any) => {
+  const addTodo = (text: string) => {
     const newTodos = [
       ...values.todoList.concat({ text: text, isCompleted: false }),
     ];
     setValues({ ...values, todoList: newTodos });
   };
 
-  const completeTodo = (index: any) => {
+  const completeTodo = (index: number) => {
     const newTodos = [...values.todoList];
     newTodos[index].isCompleted = !newTodos[index].isCompleted;
     setValues({ ...values, todoList: newTodos });
   };
 
-  const removeTodo = (index: any) => {
+  const removeTodo = (index: number) => {
     const newTodos = [...values.todoList];
     newTodos.splice(index, 1);
     setValues({ ...values, todoList: newTodos });
@@ -102,22 +103,5 @@ const Generator: React.FC = () => {
     </div>
   );
 };
-
-// return (
-//   <div className="app">
-//     <div className="todo-list">
-//       {todos.map((todo: any, index: any) => (
-//         <ToDo.Item
-//           key={index}
-//           index={index}
-//           todo={todo}
-//           completeTodo={completeTodo}
-//           removeTodo={removeTodo}
-//         />
-//       ))}
-//       <ToDo.Form addTodo={addTodo} />
-//     </div>
-//   </div>
-// );
 
 export default Generator;
