@@ -2,17 +2,15 @@ import styled from 'styled-components';
 
 export const Main = styled.main`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
-  padding: 0 24px;
-  margin-top: 64px;
-  @media (min-width: 720px) {
-    padding: 0;
-  }
+  padding: 64px 24px 64px 24px;
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const Container = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   @media (min-width: 720px) {

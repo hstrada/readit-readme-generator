@@ -5,6 +5,10 @@ import { Container, Nav, Div, Logo } from './styles';
 
 import { IProps } from './interface';
 
+import { createBrowserHistory } from 'history';
+
+const history = createBrowserHistory();
+
 const NavBar: React.FC<IProps> = ({ toggleTheme, theme }: IProps) => {
   const chooseIconTheme =
     theme === 'light'
@@ -16,7 +20,12 @@ const NavBar: React.FC<IProps> = ({ toggleTheme, theme }: IProps) => {
       <Div>
         <Nav>
           <ul>
-            <Logo>
+            <Logo
+              onClick={() => {
+                history.push('/');
+                window.location.reload(false);
+              }}
+            >
               read<span>.</span>it
             </Logo>
           </ul>

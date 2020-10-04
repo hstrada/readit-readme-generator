@@ -24,12 +24,8 @@ const App: React.FC = () => {
       <Router>
         <NavBar toggleTheme={themeToggle} theme={theme} />
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/generator">
-            <Generator />
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route path="/generator" component={Generator} />
         </Switch>
       </Router>
     </ThemeProvider>
