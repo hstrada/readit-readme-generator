@@ -7,8 +7,8 @@ export const DefaultContainer = styled.button`
   text-decoration: none;
   border: 0;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.tertiary};
+  background-color: ${({ theme }) => theme.colors.button.flat.background};
+  color: ${({ theme }) => theme.colors.button.flat.font};
 
   @media (min-width: 720px) {
     width: initial;

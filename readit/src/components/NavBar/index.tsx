@@ -1,7 +1,7 @@
 import React from 'react';
 import ButtonLink from '../ButtonLink';
 
-import { Container, Nav, Div } from './styles';
+import { Container, Nav, Div, Logo } from './styles';
 
 import { IProps } from './interface';
 
@@ -16,9 +16,9 @@ const NavBar: React.FC<IProps> = ({ toggleTheme, theme }: IProps) => {
       <Div>
         <Nav>
           <ul>
-            <li>
+            <Logo>
               read<span>.</span>it
-            </li>
+            </Logo>
           </ul>
           <ul>
             <li onClick={toggleTheme}>

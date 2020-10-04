@@ -3,6 +3,7 @@ import React from 'react';
 import {
   Main,
   Title,
+  SubTitle,
   Container,
   Content,
   Image,
@@ -22,10 +23,10 @@ const Home: React.FC = () => {
               Make github project readme easy and fast<span>.</span>
             </Title>
 
-            <p>
+            <SubTitle>
               A generator that help you to make beautiful and complete readme.
               Let’s take a look?
-            </p>
+            </SubTitle>
           </ContentText>
           <ContentButton>
             <ButtonLink.Flat label="Generate" linkTo="generator" />

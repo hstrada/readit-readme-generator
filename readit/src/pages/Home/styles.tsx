@@ -62,13 +62,17 @@ export const ContentButton = styled.div`
 
 export const Title = styled.h1`
   font: 700 44px Poppins;
-  color: #202020;
+  color: ${({ theme }) => theme.colors.text.title};
   text-align: left;
   line-height: 57px;
   margin-bottom: 24px;
   & > span {
     color: ${({ theme }) => theme.colors.primary};
   }
+`;
+
+export const SubTitle = styled.p`
+  color: ${({ theme }) => theme.colors.text.subtitle};
 `;
 
 export const Image = styled.div`

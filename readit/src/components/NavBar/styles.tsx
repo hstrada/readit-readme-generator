@@ -20,6 +20,13 @@ export const Div = styled.div`
   margin: 0 auto;
 `;
 
+export const Logo = styled.li`
+  color: ${({ theme }) => theme.colors.logo};
+  & > span {
+    color: ${({ theme }) => theme.colors.primary};
+  }
+`;
+
 export const Nav = styled.nav`
   display: flex;
   flex: 1;
@@ -38,9 +45,6 @@ export const Nav = styled.nav`
 
     li {
       display: inline;
-      & > span {
-        color: ${({ theme }) => theme.colors.primary};
-      }
     }
 
     :last-child {
