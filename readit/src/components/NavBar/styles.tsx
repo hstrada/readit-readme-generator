@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
   top: 0;
+  background-color: ${({ theme }) => theme.colors.background};
   display: flex;
   width: 100%;
   height: 60px;
@@ -10,19 +11,20 @@ export const Container = styled.header`
   font-size: 32px;
   font-family: ${({ theme }) => theme.fonts.primary};
   @media (min-width: 720px) {
-    width: 1120px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 12px 0 0 0;
+    max-width: 100%;
   }
+`;
+
+export const Div = styled.div`
+  width: 1200px;
+  margin: 0 auto;
 `;
 
 export const Nav = styled.nav`
   display: flex;
   flex: 1;
   height: 100%;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
 

@@ -1,19 +1,28 @@
-export const lightColors = {
-  primary: '#1771F7',
-  secondary: '#202020',
-  tertiary: '#FFFFFF',
-  fourth: '#31373D',
+const colors = {
+  blue: '#1771F7',
+  darkGray: '#202020',
+  white: '#FFFFFF',
+  mediumGray: '#31373D',
   transparent: 'transparent',
   neutral: '#ECECEC',
-  background: '#FFFFFF',
+};
+
+export const lightColors = {
+  primary: colors.blue,
+  secondary: colors.darkGray,
+  tertiary: colors.white,
+  fourth: colors.mediumGray,
+  transparent: colors.transparent,
+  neutral: colors.neutral,
+  background: colors.white,
 };
 
 export const darkColors = {
-  primary: '#1771F7',
-  secondary: '#202020',
-  tertiary: '#FFFFFF',
-  fourth: '#31373D',
-  transparent: 'transparent',
-  neutral: '#ECECEC',
-  background: '#31373D',
+  primary: colors.blue,
+  secondary: colors.darkGray,
+  tertiary: colors.white,
+  fourth: colors.mediumGray,
+  transparent: colors.transparent,
+  neutral: colors.neutral,
+  background: colors.mediumGray,
 };
