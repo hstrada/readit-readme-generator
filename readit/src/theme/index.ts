@@ -1,15 +1,21 @@
 import { DefaultTheme } from 'styled-components';
 
-import colors from './colors';
+import { lightColors, darkColors } from './colors';
 
 import units from './units';
 
 import fonts from './fonts';
 
-const readitTheme: DefaultTheme = {
-  colors: colors,
+const readitLightTheme: DefaultTheme = {
+  colors: lightColors,
   units: units,
   fonts: fonts,
 };
 
-export { readitTheme };
+const readitDarkTheme: DefaultTheme = {
+  colors: darkColors,
+  units: units,
+  fonts: fonts,
+};
+
+export { readitLightTheme, readitDarkTheme };

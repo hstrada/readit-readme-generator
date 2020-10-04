@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { generate } from '../../utils';
 
-import { Input, NavBar, Button, ToDo } from '../../components';
+import { Input, Button, ToDo } from '../../components';
 
 import { Main, Container, ContainerButton, ContainerForm } from './styles';
 
@@ -56,51 +56,47 @@ const Generator: React.FC = () => {
   };
 
   return (
-    <div>
-      <NavBar />
-
-      <Main>
-        <Container>
-          {values.questions.map((value, index) => {
-            return (
-              <Input
-                key={index}
-                value={value.answer}
-                placeholder={value.question}
-                onChange={e => handleQA(e, index)}
-              />
-            );
-          })}
-
-          <ContainerForm>
-            <ToDo.Form addTodo={addTodo} />
-          </ContainerForm>
-
-          {values.todoList.map((todo: IItem, index: number) => (
-            <ToDo.Item
+    <Main>
+      <Container>
+        {values.questions.map((value, index) => {
+          return (
+            <Input
               key={index}
-              index={index}
-              todo={todo}
-              completeTodo={completeTodo}
-              removeTodo={removeTodo}
+              value={value.answer}
+              placeholder={value.question}
+              onChange={e => handleQA(e, index)}
             />
-          ))}
+          );
+        })}
 
-          <ContainerButton>
-            <Button.Outline label="Clean" />
-            <Button.Flat
-              onClick={() =>
-                generate.download({
-                  questions: values.questions,
-                  futureImprovements: values.todoList,
-                })
-              }
-              label="Download"
-            />
-          </ContainerButton>
-        </Container>
-      </Main>
-    </div>
+        <ContainerForm>
+          <ToDo.Form addTodo={addTodo} />
+        </ContainerForm>
+
+        {values.todoList.map((todo: IItem, index: number) => (
+          <ToDo.Item
+            key={index}
+            index={index}
+            todo={todo}
+            completeTodo={completeTodo}
+            removeTodo={removeTodo}
+          />
+        ))}
+
+        <ContainerButton>
+          <Button.Outline label="Clean" />
+          <Button.Flat
+            onClick={() =>
+              generate.download({
+                questions: values.questions,
+                futureImprovements: values.todoList,
+              })
+            }
+            label="Download"
+          />
+        </ContainerButton>
+      </Container>
+    </Main>
   );
 };
 

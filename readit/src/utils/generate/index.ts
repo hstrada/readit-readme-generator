@@ -7,13 +7,13 @@ const readme = ({
   qa: Array<{ question: string; answer: string }>;
   futureImprovements: Array<IItem>;
 }): string => {
-  const readme = `# ${qa[0].question} 
+  const readme = `# :zap: ${qa[0].question} 
 ${qa[0].answer}
 
-# ${qa[1].question}
+# :eyes: ${qa[1].question}
 ${qa[1].answer}
 
-# Future Improvements
+# :boom: Future Improvements
 
 ${futureImprovements
   .map(todo => `- [${todo.isCompleted ? 'x' : ' '}] ` + todo.text)

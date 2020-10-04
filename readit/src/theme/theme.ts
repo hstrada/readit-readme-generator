@@ -1,11 +1,11 @@
-import colors from './colors';
+import { lightColors } from './colors';
 
 export const lightTheme = {
-  text: colors.secondary,
-  background: colors.tertiary,
+  text: lightColors.secondary,
+  background: lightColors.tertiary,
 };
 
 export const darkTheme = {
-  text: colors.tertiary,
-  background: colors.fourth,
+  text: lightColors.tertiary,
+  background: lightColors.fourth,
 };

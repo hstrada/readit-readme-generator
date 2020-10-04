@@ -7,6 +7,7 @@ export const Main = styled.main`
   justify-content: center;
   align-items: center;
   padding: 0 24px;
+  background-color: ${({ theme }) => theme.colors.background};
   @media (min-width: 720px) {
     padding: 0;
   }

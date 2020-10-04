@@ -3,7 +3,14 @@ import ButtonLink from '../ButtonLink';
 
 import { Container, Nav } from './styles';
 
-const NavBar: React.FC = () => {
+import { IProps } from './interface';
+
+const NavBar: React.FC<IProps> = ({ toggleTheme, theme }: IProps) => {
+  const chooseIconTheme =
+    theme === 'light'
+      ? require('../../assets/imgs/moon.png')
+      : require('../../assets/imgs/sun.png');
+
   return (
     <Container>
       <Nav>
@@ -13,8 +20,8 @@ const NavBar: React.FC = () => {
           </li>
         </ul>
         <ul>
-          <li>
-            <img src={require('../../assets/imgs/moon.png')} />
+          <li onClick={toggleTheme}>
+            <img src={chooseIconTheme} />
           </li>
           <li>
             <img src={require('../../assets/imgs/github.png')} />
