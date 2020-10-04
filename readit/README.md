@@ -1,10 +1,13 @@
-# Project Name 
+# :zap: Project Name 
 read.it
 
-# Project Description
-read.it readme generator
+# :eyes: Project Description
+generate readme
 
-# Future Improvements
+# :boom: Future Improvements
 
-- [ ] home page
-- [ ] dark mode
+- [ ] add github link
+- [ ] add translation
+- [x] add toggle theme
+- [x] add home 
+- [x] add generator
