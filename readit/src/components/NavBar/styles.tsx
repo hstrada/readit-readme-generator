@@ -34,6 +34,7 @@ export const Nav = styled.nav`
     padding: 0;
     align-content: center;
     align-items: center;
+    display: flex;
 
     li {
       display: inline;
@@ -45,6 +46,7 @@ export const Nav = styled.nav`
     :last-child {
       li {
         padding-left: 24px;
+        display: flex;
       }
     }
   }
