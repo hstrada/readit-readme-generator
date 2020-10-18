@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { ThemeProvider } from 'styled-components';
@@ -11,9 +11,27 @@ import { NavBar } from './components';
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+
   const themeToggle = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light');
+    if (theme === 'light') {
+      setTheme('dark');
+      window.localStorage.setItem('theme', 'dark');
+    } else {
+      setTheme('light');
+      window.localStorage.setItem('theme', 'light');
+    }
   };
+
+  useEffect(() => {
+    const themeMode = window.localStorage.getItem('theme');
+    if (themeMode === 'light') {
+      setTheme('light');
+    } else if (themeMode === 'dark') {
+      setTheme('dark');
+    } else {
+      setTheme('dark');
+    }
+  }, []);
 
   return (
     <ThemeProvider
