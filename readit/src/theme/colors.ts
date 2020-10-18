@@ -34,6 +34,9 @@ export const lightColors = {
       border: colors.eerieBlack,
     },
   },
+  input: {
+    placeholder: colors.white,
+  },
 };
 
 export const darkColors = {
@@ -60,5 +63,8 @@ export const darkColors = {
       font: colors.white,
       border: colors.white,
     },
+  },
+  input: {
+    placeholder: colors.gunmetal,
   },
 };

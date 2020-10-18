@@ -46,7 +46,7 @@ export const FormLabel = styled.label<StyledProps>`
   left: 20px;
   top: 14px;
   transition: 0.3s ease all;
-  color: ${({ theme }) => theme.colors.tertiary};
+  color: ${({ theme }) => theme.colors.input.placeholder};
 
   ${({ hasValue }) => hasValue && floatingConfig};
 
