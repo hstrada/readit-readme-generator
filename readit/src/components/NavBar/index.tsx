@@ -1,7 +1,16 @@
 import React from 'react';
 import ButtonLink from '../ButtonLink';
 
-import { Container, Nav, Div, Logo } from './styles';
+import {
+  Container,
+  Nav,
+  Div,
+  Logo,
+  GithubIcon,
+  SunIcon,
+  MoonIcon,
+  GlobeIcon
+} from './styles';
 
 import { IProps } from './interface';
 
@@ -9,29 +18,7 @@ import { createBrowserHistory } from 'history';
 
 const history = createBrowserHistory();
 
-interface IconProps {
-  light: {
-    icon: string;
-    github: string;
-  };
-  dark: {
-    icon: string;
-    github: string;
-  };
-}
-
 const NavBar: React.FC<IProps> = ({ toggleTheme, theme }: IProps) => {
-  const chooseIconTheme: IconProps = {
-    light: {
-      icon: require('../../assets/imgs/moon.png'),
-      github: require('../../assets/imgs/github.png'),
-    },
-    dark: {
-      icon: require('../../assets/imgs/sun.png'),
-      github: require('../../assets/imgs/github-light.png'),
-    },
-  };
-
   return (
     <Container>
       <Div>
@@ -48,10 +35,19 @@ const NavBar: React.FC<IProps> = ({ toggleTheme, theme }: IProps) => {
           </ul>
           <ul>
             <li onClick={toggleTheme}>
-              <img src={chooseIconTheme[theme].icon} />
+              {theme === 'dark' ? (
+                <SunIcon />
+              ) : (
+                  <MoonIcon />
+                )}
             </li>
             <li>
-              <img src={chooseIconTheme[theme].github} />
+              <a href="https://github.com/hstrada/readit-readme-generator">
+                <GithubIcon />
+              </a>
+            </li>
+            <li>
+              <GlobeIcon />
             </li>
             <li>
               <ButtonLink.Flat
