@@ -5,6 +5,7 @@ import { DefaultContainer } from '../Default/styles';
 import { StyledProps } from './interface';
 
 export const Container = styled(DefaultContainer)<StyledProps>`
+  
   &:hover {
     background-color: #085ddd;
   }
