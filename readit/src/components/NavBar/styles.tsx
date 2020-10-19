@@ -1,11 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { 
-  FiGithub,
-  FiSun,
-  FiMoon,
-  FiGlobe
-} from 'react-icons/fi';
+import { FiGithub, FiSun, FiMoon, FiGlobe } from 'react-icons/fi';
 
 export const Container = styled.header`
   top: 0;
@@ -64,13 +59,21 @@ export const Nav = styled.nav`
 `;
 
 const iconCSS = css`
-    flex-shrink: 0;
-    width: 20px;
-    height: 20px;
-    color: ${({ theme }) => theme.colors.logo};
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: ${({ theme }) => theme.colors.logo};
 `;
 
-export const GithubIcon = styled(FiGithub)`${iconCSS}`;
-export const SunIcon = styled(FiSun)`${iconCSS}`;
-export const MoonIcon = styled(FiMoon)`${iconCSS}`;
-export const GlobeIcon = styled(FiGlobe)`${iconCSS}`;
+export const GithubIcon = styled(FiGithub)`
+  ${iconCSS}
+`;
+export const SunIcon = styled(FiSun)`
+  ${iconCSS}
+`;
+export const MoonIcon = styled(FiMoon)`
+  ${iconCSS}
+`;
+export const GlobeIcon = styled(FiGlobe)`
+  ${iconCSS}
+`;

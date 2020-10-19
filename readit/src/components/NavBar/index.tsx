@@ -9,7 +9,7 @@ import {
   GithubIcon,
   SunIcon,
   MoonIcon,
-  GlobeIcon
+  GlobeIcon,
 } from './styles';
 
 import { IProps } from './interface';
@@ -35,11 +35,7 @@ const NavBar: React.FC<IProps> = ({ toggleTheme, theme }: IProps) => {
           </ul>
           <ul>
             <li onClick={toggleTheme}>
-              {theme === 'dark' ? (
-                <SunIcon />
-              ) : (
-                  <MoonIcon />
-                )}
+              {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
             </li>
             <li>
               <a href="https://github.com/hstrada/readit-readme-generator">
