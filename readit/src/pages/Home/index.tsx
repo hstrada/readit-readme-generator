@@ -13,14 +13,19 @@ import {
 
 import { ButtonLink } from '../../components';
 
+import { useTranslation } from 'react-i18next';
+
 const Home: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <Main>
       <Container>
         <Content>
           <ContentText>
             <Title>
-              Make github project readme easy and fast<span>.</span>
+              {t('home.title')}
+              <span>.</span>
             </Title>
 
             <SubTitle>
