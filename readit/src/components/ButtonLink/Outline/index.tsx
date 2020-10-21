@@ -4,10 +4,10 @@ import { Container } from './styles';
 
 import { Props } from './interface';
 
-const Outline: React.FC<Props> = ({ linkTo, ...rest }: Props) => {
+const Outline: React.FC<Props> = ({ linkTo, label, ...rest }: Props) => {
   return (
     <Container to={linkTo} {...rest}>
-      Support us
+      {label}
     </Container>
   );
 };

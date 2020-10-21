@@ -16,8 +16,6 @@ import { IProps } from './interface';
 
 import { createBrowserHistory } from 'history';
 
-// import i18n from '../../config/i18n';
-
 import { useTranslation } from 'react-i18next';
 
 const history = createBrowserHistory();
@@ -25,8 +23,9 @@ const history = createBrowserHistory();
 const NavBar: React.FC<IProps> = ({ toggleTheme, theme }: IProps) => {
   const { t, i18n } = useTranslation();
 
-  const changeLanguage = (lng: 'pt' | 'en') => {
-    i18n.changeLanguage(lng);
+  const changeLanguage = () => {
+    if (i18n.language === 'en') i18n.changeLanguage('pt');
+    else i18n.changeLanguage('en');
   };
 
   return (
@@ -52,13 +51,13 @@ const NavBar: React.FC<IProps> = ({ toggleTheme, theme }: IProps) => {
                 <GithubIcon />
               </a>
             </li>
-            <li onClick={() => changeLanguage('en')}>
+            <li onClick={() => changeLanguage()}>
               <GlobeIcon />
             </li>
             <li>
               <ButtonLink.Flat
                 variant="primary"
-                label="Generate"
+                label={t('navbar.button')}
                 linkTo="generator"
                 small
               />

@@ -28,15 +28,17 @@ const Home: React.FC = () => {
               <span>.</span>
             </Title>
 
-            <SubTitle>
-              A generator that help you to make beautiful and complete readme.
-              Let’s take a look?
-            </SubTitle>
+            <SubTitle>{t('home.subtitle')}</SubTitle>
           </ContentText>
           <ContentButton>
-            <ButtonLink.Flat label="Generate" linkTo="generator" />
-
-            <ButtonLink.Outline linkTo="teste" />
+            <ButtonLink.Flat
+              label={t('home.buttons.generate')}
+              linkTo="generator"
+            />
+            <ButtonLink.Outline
+              linkTo="teste"
+              label={t('home.buttons.supportUs')}
+            />
           </ContentButton>
         </Content>
 

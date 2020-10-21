@@ -15,7 +15,7 @@ i18next
     },
     supportedLngs: ['pt', 'en'],
     fallbackLng: 'en',
-    lng: 'pt',
+    lng: 'en',
     resources: translations,
   });
 
