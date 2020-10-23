@@ -10,7 +10,7 @@ import Home from './pages/Home';
 import { NavBar } from './components';
 
 const App: React.FC = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   const themeToggle = () => {
     if (theme === 'light') {
