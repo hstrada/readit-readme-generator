@@ -7,23 +7,29 @@ import { Input, Button, ToDo } from '../../components';
 import { Main, Container, ContainerButton, ContainerForm } from './styles';
 
 import { IItem } from '../../components/ToDo/Item/interface';
+import { IQuestions } from './interface';
+
+const defaultQuestions: IQuestions[] = [
+  {
+    question: 'Project Name',
+    answer: '',
+  },
+  {
+    question: 'Project Description',
+    answer: '',
+  },
+];
 
 const Generator: React.FC = () => {
-  const questions = [
-    {
-      question: 'Project Name',
-      answer: '',
-    },
-    {
-      question: 'Project Description',
-      answer: '',
-    },
-  ];
-
   const todoList: Array<IItem> = [];
 
+  const answeredQuestions: IQuestions[] = [];
+  defaultQuestions.forEach(val =>
+    answeredQuestions.push(Object.assign({}, val)),
+  );
+
   const [values, setValues] = useState({
-    questions: questions,
+    questions: answeredQuestions,
     todoList: todoList,
   });
 
@@ -55,6 +61,20 @@ const Generator: React.FC = () => {
     setValues({ ...values, todoList: newTodos });
   };
 
+  const downloadReadme = () =>
+    generate.download({
+      questions: values.questions,
+      futureImprovements: values.todoList,
+    });
+
+  const cleanForm = () => {
+    setValues({
+      ...values,
+      questions: defaultQuestions,
+      todoList: [],
+    });
+  };
+
   return (
     <Main>
       <Container>
@@ -84,16 +104,8 @@ const Generator: React.FC = () => {
         ))}
 
         <ContainerButton>
-          <Button.Outline label="Clean" />
-          <Button.Flat
-            onClick={() =>
-              generate.download({
-                questions: values.questions,
-                futureImprovements: values.todoList,
-              })
-            }
-            label="Download"
-          />
+          <Button.Outline label="Clean" onClick={cleanForm} />
+          <Button.Flat onClick={downloadReadme} label="Download" />
         </ContainerButton>
       </Container>
     </Main>
