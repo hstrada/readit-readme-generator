@@ -16,13 +16,22 @@ const Item: React.FC<Props> = ({
       <div>
         <ButtonAdd onClick={() => completeTodo(index)}>
           {todo.isCompleted ? (
-            <img src={require('../../../assets/imgs/check.png')} />
+            <img
+              alt="check item"
+              src={require('../../../assets/imgs/check.png')}
+            />
           ) : (
-            <img src={require('../../../assets/imgs/unchecked.png')} />
+            <img
+              alt="uncheck item"
+              src={require('../../../assets/imgs/unchecked.png')}
+            />
           )}
         </ButtonAdd>
         <ButtonDelete onClick={() => removeTodo(index)}>
-          <img src={require('../../../assets/imgs/delete.png')} />
+          <img
+            alt="delete item"
+            src={require('../../../assets/imgs/delete.png')}
+          />
         </ButtonDelete>
       </div>
     </Container>

@@ -43,7 +43,10 @@ const Home: React.FC = () => {
         </Content>
 
         <Image>
-          <img src={require('../../assets/imgs/readme-light.png')} />
+          <img
+            alt="readme preview"
+            src={require('../../assets/imgs/readme-light.png')}
+          />
         </Image>
       </Container>
     </Main>
