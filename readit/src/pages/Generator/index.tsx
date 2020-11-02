@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { generate } from '../../utils';
 
-import { Input, Button, ToDo } from '../../components';
+import { Button, ToDo, TextArea } from '../../components';
 
 import { Main, Container, ContainerButton, ContainerForm } from './styles';
 
@@ -33,7 +33,10 @@ const Generator: React.FC = () => {
     todoList: todoList,
   });
 
-  const handleQA = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  const handleQA = (
+    e: React.ChangeEvent<HTMLTextAreaElement>,
+    index: number,
+  ) => {
     const allQA = [...values.questions];
 
     const selectedQA = allQA[index];
@@ -80,7 +83,7 @@ const Generator: React.FC = () => {
       <Container>
         {values.questions.map((value, index) => {
           return (
-            <Input
+            <TextArea
               key={index}
               value={value.answer}
               placeholder={value.question}

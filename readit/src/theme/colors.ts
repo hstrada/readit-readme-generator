@@ -1,5 +1,6 @@
 const colors = {
   blue: '#1771F7',
+  lightBlue: '#F2F5FA',
   eerieBlack: '#202020',
   jet: '#2B2B2B',
   gunmetal: '#31373D',
@@ -35,6 +36,8 @@ export const lightColors = {
     },
   },
   input: {
+    background: colors.lightBlue,
+    color: colors.eerieBlack,
     placeholder: colors.white,
   },
 };
@@ -65,6 +68,8 @@ export const darkColors = {
     },
   },
   input: {
+    background: colors.lightBlue,
+    color: colors.eerieBlack,
     placeholder: colors.gunmetal,
   },
 };
