@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { generate } from '../../utils';
 
-import { Button, ToDo, TextArea } from '../../components';
+import { Button, ToDo, Input } from '../../components';
 
 import { Main, Container, ContainerButton, ContainerForm } from './styles';
 
@@ -83,7 +83,7 @@ const Generator: React.FC = () => {
       <Container>
         {values.questions.map((value, index) => {
           return (
-            <TextArea
+            <Input.TextArea
               key={index}
               value={value.answer}
               placeholder={value.question}

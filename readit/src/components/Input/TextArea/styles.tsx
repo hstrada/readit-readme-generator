@@ -32,6 +32,7 @@ export const FormInput = styled.textarea`
 
 export const FormLabel = styled.label`
   font-family: ${({ theme }) => theme.fonts.secondary};
+  color: ${({ theme }) => theme.colors.input.placeholder};
   margin-bottom: 12px;
   font-size: 20px;
 `;

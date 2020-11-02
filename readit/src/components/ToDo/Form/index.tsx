@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Input from '../../Input';
+import Input from '../../Input/Text';
 
 const Form = ({ addTodo }: any) => {
   const [value, setValue] = React.useState('');

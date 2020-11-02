@@ -4,7 +4,7 @@ import { FormGroup, FormInput, FormLabel } from './styles';
 
 import { Props } from './interface';
 
-const Input: React.FC<Props> = ({
+const Text: React.FC<Props> = ({
   value,
   onChange,
   key,
@@ -22,4 +22,4 @@ const Input: React.FC<Props> = ({
   );
 };
 
-export default Input;
+export default Text;

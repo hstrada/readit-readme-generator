@@ -38,7 +38,13 @@ export const lightColors = {
   input: {
     background: colors.lightBlue,
     color: colors.eerieBlack,
-    placeholder: colors.white,
+    placeholder: colors.gunmetal,
+  },
+  checkbox: {
+    background: colors.white,
+    color: colors.eerieBlack,
+    border: colors.platinum,
+    placeholder: colors.blue,
   },
 };
 
@@ -67,9 +73,10 @@ export const darkColors = {
       border: colors.white,
     },
   },
-  input: {
-    background: colors.lightBlue,
+  checkbox: {
+    background: colors.white,
     color: colors.eerieBlack,
-    placeholder: colors.gunmetal,
+    border: colors.platinum,
+    placeholder: colors.blue,
   },
 };
