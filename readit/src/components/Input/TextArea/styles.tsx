@@ -12,9 +12,9 @@ export const FormInput = styled.textarea`
   border-width: 0px;
   border: none;
   font-family: ${({ theme }) => theme.fonts.tertiary};
+  color: ${({ theme }) => theme.colors.input.color};
   font-size: 16px;
   padding-left: 12px;
-  color: ${({ theme }) => theme.colors.input.color};
   margin-bottom: 24px;
   resize: none;
   padding: 24px;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { generate } from '../../utils';
 
-import { Button, ToDo, Input } from '../../components';
+import { Button, Input } from '../../components';
 
 import { Main, Container, ContainerButton, ContainerForm } from './styles';
 
@@ -52,6 +52,12 @@ const Generator: React.FC = () => {
     setValues({ ...values, todoList: newTodos });
   };
 
+  const editTodo = (editText: string, index: number) => {
+    const editTodos = [...values.todoList];
+    editTodos[index].text = String(editText);
+    setValues({ ...values, todoList: editTodos });
+  };
+
   const completeTodo = (index: number) => {
     const newTodos = [...values.todoList];
     newTodos[index].isCompleted = !newTodos[index].isCompleted;
@@ -93,16 +99,18 @@ const Generator: React.FC = () => {
         })}
 
         <ContainerForm>
-          <ToDo.Form addTodo={addTodo} />
+          <button onClick={() => addTodo('')}>AddSection</button>
         </ContainerForm>
 
         {values.todoList.map((todo: IItem, index: number) => (
-          <ToDo.Item
+          <Input.Checkbox
             key={index}
             index={index}
             todo={todo}
+            value={todo.text}
             completeTodo={completeTodo}
             removeTodo={removeTodo}
+            onChange={e => editTodo(e.target.value, index)}
           />
         ))}
 
