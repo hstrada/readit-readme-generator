@@ -73,6 +73,11 @@ export const darkColors = {
       border: colors.white,
     },
   },
+  input: {
+    background: colors.lightBlue,
+    color: colors.eerieBlack,
+    placeholder: colors.platinum,
+  },
   checkbox: {
     background: colors.white,
     color: colors.eerieBlack,

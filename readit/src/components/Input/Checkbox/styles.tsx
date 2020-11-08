@@ -18,6 +18,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   font-family: ${({ theme }) => theme.fonts.secondary};
+  margin: 8px 0px;
 `;
 
 export const ContainerCheck = styled.div<StyledProps>`

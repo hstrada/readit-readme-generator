@@ -4,7 +4,16 @@ import { generate } from '../../utils';
 
 import { Button, Input } from '../../components';
 
-import { Main, Container, ContainerButton, ContainerForm } from './styles';
+import {
+  Main,
+  Container,
+  ContainerButton,
+  ContainerForm,
+  ContainerInputValues,
+  ContainerInputTitle,
+  ContainerFormButton,
+  PlusIcon,
+} from './styles';
 
 import { IItem } from '../../components/ToDo/Item/interface';
 import { IQuestions } from './interface';
@@ -98,21 +107,27 @@ const Generator: React.FC = () => {
           );
         })}
 
-        <ContainerForm>
-          <button onClick={() => addTodo('')}>AddSection</button>
-        </ContainerForm>
+        <ContainerInputValues>
+          <ContainerInputTitle>Future Improvements</ContainerInputTitle>
+          {values.todoList.map((todo: IItem, index: number) => (
+            <Input.Checkbox
+              key={index}
+              index={index}
+              todo={todo}
+              value={todo.text}
+              completeTodo={completeTodo}
+              removeTodo={removeTodo}
+              onChange={e => editTodo(e.target.value, index)}
+            />
+          ))}
+        </ContainerInputValues>
 
-        {values.todoList.map((todo: IItem, index: number) => (
-          <Input.Checkbox
-            key={index}
-            index={index}
-            todo={todo}
-            value={todo.text}
-            completeTodo={completeTodo}
-            removeTodo={removeTodo}
-            onChange={e => editTodo(e.target.value, index)}
-          />
-        ))}
+        <ContainerForm>
+          <ContainerFormButton onClick={() => addTodo('')}>
+            <PlusIcon />
+            Add new topic
+          </ContainerFormButton>
+        </ContainerForm>
 
         <ContainerButton>
           <Button.Outline label="Clean" onClick={cleanForm} />

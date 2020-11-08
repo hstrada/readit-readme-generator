@@ -1,3 +1,4 @@
+import { FiPlus } from 'react-icons/fi';
 import styled from 'styled-components';
 
 export const Main = styled.main`
@@ -24,6 +25,35 @@ export const Container = styled.div`
 `;
 
 export const ContainerForm = styled.div``;
+
+export const ContainerInputValues = styled.div``;
+
+export const ContainerInputTitle = styled.label`
+  font-family: ${({ theme }) => theme.fonts.secondary};
+  color: ${({ theme }) => theme.colors.input.placeholder};
+  margin-bottom: 12px;
+  font-size: 20px;
+`;
+
+export const ContainerFormButton = styled.button`
+  display: flex;
+  height: 54px;
+  align-items: center;
+  align-content: center;
+  background: none;
+  color: ${({ theme }) => theme.colors.primary};
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+`;
+
+export const PlusIcon = styled(FiPlus)`
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+`;
 
 export const Form = styled.form`
   display: flex;
