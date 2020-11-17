@@ -19,5 +19,5 @@ jobs:
         run: cd readit && npm run build
       - name: Semantic release
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: cd readit && npx semantic-release
