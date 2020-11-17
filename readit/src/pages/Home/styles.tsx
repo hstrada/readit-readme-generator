@@ -81,3 +81,22 @@ export const Image = styled.div`
     display: inline;
   }
 `;
+
+export const ButtonSupport = styled.a`
+  padding: 12px 24px;
+  font: 600 20px Poppins;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.button.outline.background};
+  border: 2px solid ${({ theme }) => theme.colors.button.outline.border};
+  color: ${({ theme }) => theme.colors.button.outline.font};
+  &:hover {
+    background-color: #f6f6f6;
+  }
+
+  @media (min-width: 720px) {
+    width: initial;
+  }
+`;

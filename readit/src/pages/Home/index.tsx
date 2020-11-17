@@ -9,6 +9,7 @@ import {
   Image,
   ContentButton,
   ContentText,
+  ButtonSupport,
 } from './styles';
 
 import { ButtonLink } from '../../components';
@@ -35,10 +36,9 @@ const Home: React.FC = () => {
               label={t('home.buttons.generate')}
               linkTo="generator"
             />
-            <ButtonLink.Outline
-              linkTo="teste"
-              label={t('home.buttons.supportUs')}
-            />
+            <ButtonSupport href="https://github.com/hstrada/readit-readme-generator/stargazers">
+              {t('home.buttons.supportUs')}
+            </ButtonSupport>
           </ContentButton>
         </Content>
 
