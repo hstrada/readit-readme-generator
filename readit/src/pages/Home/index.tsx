@@ -36,7 +36,10 @@ const Home: React.FC = () => {
               label={t('home.buttons.generate')}
               linkTo="generator"
             />
-            <ButtonSupport href="https://github.com/hstrada/readit-readme-generator/stargazers">
+            <ButtonSupport
+              target="_blank"
+              href="https://github.com/hstrada/readit-readme-generator/stargazers"
+            >
               {t('home.buttons.supportUs')}
             </ButtonSupport>
           </ContentButton>
