@@ -15,7 +15,7 @@ import {
   PlusIcon,
 } from './styles';
 
-import { IItem } from '../../components/ToDo/Item/interface';
+import { IItem } from './interface';
 import { IQuestions } from './interface';
 
 const defaultQuestions: IQuestions[] = [

@@ -1,4 +1,4 @@
-import { IItem } from '../../components/ToDo/Item/interface';
+import { IItem } from '../../pages/Generator/interface';
 
 const readme = ({
   qa,
