@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/hstrada/readit-readme-generator/compare/v1.0.0...v1.1.0) (2020-11-18)
+
+
+### Bug Fixes
+
+* item interface path ([57fc11c](https://github.com/hstrada/readit-readme-generator/commit/57fc11c148595d01ad5a5ca502ea350c68b6dcf9))
+
+
+### Features
+
+* remove unused components ([9572b6e](https://github.com/hstrada/readit-readme-generator/commit/9572b6ef8d5d8427e410c75beec4f9af8147be60))
+
 # 1.0.0 (2020-11-17)
 
 
