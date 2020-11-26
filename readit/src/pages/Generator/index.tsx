@@ -99,7 +99,7 @@ const Generator: React.FC = () => {
         {values.questions.map((value, index) => {
           return (
             <Input.TextArea
-              key={index}
+              key={`${value}_${index}`}
               value={value.answer}
               placeholder={value.question}
               onChange={e => handleQA(e, index)}
@@ -111,6 +111,7 @@ const Generator: React.FC = () => {
           <ContainerInputTitle>Future Improvements</ContainerInputTitle>
           {values.todoList.map((todo: IItem, index: number) => (
             <Input.Checkbox
+              data-testid="future-improvements"
               key={index}
               index={index}
               todo={todo}
@@ -123,7 +124,10 @@ const Generator: React.FC = () => {
         </ContainerInputValues>
 
         <ContainerForm>
-          <ContainerFormButton onClick={() => addTodo('')}>
+          <ContainerFormButton
+            data-testid="add-new-topic"
+            onClick={() => addTodo('')}
+          >
             <PlusIcon />
             Add new topic
           </ContainerFormButton>

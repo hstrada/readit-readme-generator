@@ -1,0 +1,9 @@
+unitário -> garantir que o botão foi chamado
+
+integração -> em relação a lista
+	pode verificar o tamanho da lista
+	
+	userevent
+	simulate no clique
+	
+react-testing-library
