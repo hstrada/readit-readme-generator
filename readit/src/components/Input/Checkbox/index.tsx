@@ -23,6 +23,8 @@ const Checkbox: React.FC<Props> = ({
         <Check />
       </ContainerCheck>
       <Label
+        data-testid="future-improvements"
+        key={index}
         type="text"
         value={labelValue}
         onChange={e => {

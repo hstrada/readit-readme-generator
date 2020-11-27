@@ -108,10 +108,11 @@ const Generator: React.FC = () => {
         })}
 
         <ContainerInputValues>
-          <ContainerInputTitle>Future Improvements</ContainerInputTitle>
+          <ContainerInputTitle data-testid="list-future-improvements">
+            Future Improvements
+          </ContainerInputTitle>
           {values.todoList.map((todo: IItem, index: number) => (
             <Input.Checkbox
-              data-testid="future-improvements"
               key={index}
               index={index}
               todo={todo}
