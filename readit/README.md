@@ -57,7 +57,7 @@ To clone the project, use the commands bellow:
   # Install the dependencies
   ❯ yarn
 
-  # Install the IOS dependencies
+  # Start the project
   ❯ yarn start
 
 ```
