@@ -32,7 +32,7 @@ export const ContentText = styled.div`
   margin-bottom: 36px;
 
   @media (min-width: 1200px) {
-    max-width: 1200px;
+    max-width: 560px;
   }
 `;
 
@@ -41,7 +41,7 @@ export const ContentButton = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   @media (min-width:  1200px) {
     flex-direction: row;
   max-width: 560px;
