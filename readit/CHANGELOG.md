@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/hstrada/readit-readme-generator/compare/v1.1.1...v1.1.2) (2020-11-28)
+
+
+### Bug Fixes
+
+* readme instructions ([4c3709a](https://github.com/hstrada/readit-readme-generator/commit/4c3709ad9baa4fb4f2eb2bf4a227b66b0ba92ec5))
+
 ## [1.1.1](https://github.com/hstrada/readit-readme-generator/compare/v1.1.0...v1.1.1) (2020-11-28)
 
 
