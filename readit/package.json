@@ -1,6 +1,6 @@
 {
   "name": "readit",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "dependencies": {
     "@commitlint/cli": "^9.1.2",
