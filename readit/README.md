@@ -13,4 +13,5 @@ generate readme
 - [x] add generator
 - [x] deploy to netlify
 - [ ] clean button
-- [ ] tests
+- [x] configure tests
+- [x] configure semantic release
