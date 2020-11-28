@@ -19,31 +19,37 @@ export const Content = styled.div`
   align-items: flex-start;
   padding: 0 20px;
 
-  @media (min-width: 720px) {
+  @media (min-width: 1200px) {
     max-width: 1200px;
   }
 `;
 
 export const ContentText = styled.div`
-  width: 560px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 36px;
+
+  @media (min-width: 1200px) {
+    max-width: 1200px;
+  }
 `;
 
 export const ContentButton = styled.div`
-  width: 560px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media (min-width: 720px) {
+  
+  @media (min-width:  1200px) {
     flex-direction: row;
+  max-width: 560px;
   }
 
   a + a {
     margin-top: 20px;
-    @media (min-width: 720px) {
+    @media (min-width: 1200px) {
       margin-top: 0;
       margin-left: 48px;
     }
@@ -67,7 +73,7 @@ export const SubTitle = styled.p`
 
 export const Image = styled.div`
   display: none;
-  @media (min-width: 720px) {
+  @media (min-width: 1200px) {
     position: absolute;
     top: 50%;
     right: 0;
@@ -93,7 +99,7 @@ export const ButtonSupport = styled.a`
   color: ${({ theme }) => theme.colors.button.outline.font};
   
 
-  @media (min-width: 720px) {
+  @media (min-width: 1200px) {
     width: initial;
   }
 `;

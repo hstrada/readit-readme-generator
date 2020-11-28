@@ -11,7 +11,7 @@ export const DefaultContainer = styled.button`
   color: ${({ theme }) => theme.colors.button.flat.font};
   transition: all 0.4s;
 
-  @media (min-width: 720px) {
+  @media (min-width: 1200px) {
     width: initial;
   }
 `;
