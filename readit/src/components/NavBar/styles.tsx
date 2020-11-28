@@ -3,7 +3,9 @@ import styled, { css } from 'styled-components';
 import { FiGithub, FiSun, FiMoon, FiGlobe } from 'react-icons/fi';
 
 export const Container = styled.header`
+  position: fixed;
   top: 0;
+  left: 0;
   background-color: ${({ theme }) => theme.colors.background};
   display: flex;
   width: 100%;
@@ -24,6 +26,7 @@ export const Div = styled.div`
 
 export const Logo = styled.li`
   color: ${({ theme }) => theme.colors.logo};
+  cursor: pointer;
   & > span {
     color: ${({ theme }) => theme.colors.primary};
   }
@@ -46,6 +49,7 @@ export const Nav = styled.nav`
     display: flex;
 
     li {
+      cursor: pointer;
       display: inline;
     }
 

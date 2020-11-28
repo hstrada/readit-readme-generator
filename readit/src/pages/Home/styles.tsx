@@ -1,41 +1,31 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
+  position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 24px;
   background-color: ${({ theme }) => theme.colors.background};
-  @media (min-width: 720px) {
-    padding: 0;
-  }
-`;
-
-export const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media (min-width: 720px) {
-    max-width: 1120px;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 560px 1fr;
-  }
 `;
 
 export const Content = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
+  padding: 0 20px;
+
+  @media (min-width: 720px) {
+    max-width: 1200px;
+  }
 `;
 
 export const ContentText = styled.div`
-  width: 100%;
+  width: 560px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -43,7 +33,7 @@ export const ContentText = styled.div`
 `;
 
 export const ContentButton = styled.div`
-  width: 100%;
+  width: 560px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,7 +68,16 @@ export const SubTitle = styled.p`
 export const Image = styled.div`
   display: none;
   @media (min-width: 720px) {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 80%;
     display: inline;
+  }
+
+  > img {
+    height: 100%;
   }
 `;
 
@@ -92,9 +91,7 @@ export const ButtonSupport = styled.a`
   background-color: ${({ theme }) => theme.colors.button.outline.background};
   border: 2px solid ${({ theme }) => theme.colors.button.outline.border};
   color: ${({ theme }) => theme.colors.button.outline.font};
-  &:hover {
-    background-color: #f6f6f6;
-  }
+  
 
   @media (min-width: 720px) {
     width: initial;

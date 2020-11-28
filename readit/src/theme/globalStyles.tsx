@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Poppins-SemiBold';
-    background: #FFF;
+    background: ${({ theme }) => theme.colors.background};
     height: 100vh;
   }
 `;

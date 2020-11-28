@@ -4,7 +4,6 @@ import {
   Main,
   Title,
   SubTitle,
-  Container,
   Content,
   Image,
   ContentButton,
@@ -21,7 +20,6 @@ const Home: React.FC = () => {
 
   return (
     <Main>
-      <Container>
         <Content>
           <ContentText>
             <Title>
@@ -48,10 +46,9 @@ const Home: React.FC = () => {
         <Image>
           <img
             alt="readme preview"
-            src={require('../../assets/imgs/readme-light.png')}
+            src={require('../../assets/imgs/readme-light.svg')}
           />
         </Image>
-      </Container>
     </Main>
   );
 };

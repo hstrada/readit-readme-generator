@@ -10,6 +10,7 @@ export const DefaultContainer = styled(Link)`
   width: 100%;
   background-color: ${({ theme }) => theme.colors.button.flat.background};
   color: ${({ theme }) => theme.colors.button.flat.font};
+  transition: all .4s;
 
   @media (min-width: 720px) {
     width: initial;
