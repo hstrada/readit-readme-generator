@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/hstrada/readit-readme-generator/compare/v1.1.4...v1.1.5) (2020-11-29)
+
+
+### Bug Fixes
+
+* remove unused file ([d56247f](https://github.com/hstrada/readit-readme-generator/commit/d56247f2041b333cfe722f1daac0590336b872f1))
+
 ## [1.1.4](https://github.com/hstrada/readit-readme-generator/compare/v1.1.3...v1.1.4) (2020-11-29)
 
 
