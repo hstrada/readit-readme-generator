@@ -5,6 +5,5 @@ export interface StyledProps {
 export interface Props {
   value: string;
   placeholder?: string;
-  key: string | number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

@@ -7,19 +7,13 @@ import { Props } from './interface';
 const InputText: React.FC<Props> = ({
   value,
   onChange,
-  key,
   placeholder,
   maxLength = 360,
 }: Props) => {
   return (
     <FormGroup>
       <FormLabel htmlFor="first">{placeholder}</FormLabel>
-      <FormInput
-        key={key}
-        value={value}
-        maxLength={maxLength}
-        onChange={onChange}
-      />
+      <FormInput value={value} maxLength={maxLength} onChange={onChange} />
     </FormGroup>
   );
 };
